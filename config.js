@@ -108,7 +108,7 @@ config = {
     // ### Testing MySQL
     // Used by Travis - Automated testing run through GitHub
     'testing-mysql': {
-        url: 'http://127.0.0.1:2369',
+        url: process.env.HEROKU_URL,
         database: {
             client: 'mysql',
             connection: {
@@ -120,8 +120,8 @@ config = {
             }
         },
         server: {
-            host: '127.0.0.1',
-            port: '2369'
+            host: '0.0.0.0',
+            port: process.env.PORT
         },
         logging: false
     },
